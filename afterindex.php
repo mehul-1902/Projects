@@ -1,0 +1,81 @@
+<?php
+session_start();
+$user = $_SESSION['id'];
+
+if($user == true)
+{
+
+}
+else
+                {
+                    header("location:user/login.php");
+                }
+    
+?>
+
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <title>DOCSTACK</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="" href="favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css">
+    </head>
+
+    <body>
+        <a class="h2" href="./afterindex.php">DOCSTACK</a>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="./vault.php">Vault</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="./user/logout.php" class="login">Logout</a></li>
+            </ul>
+        </nav>
+
+        <article id="home">
+            <h3>BEST
+                <BR>DOCUMENT
+                <BR>VAULT.</h3>
+            <p>Store it safe with us.</p>
+            <a href="./vault.php" class="button">Get Started</a>
+        </article>
+
+
+        <section class="hero-sec">
+            <div class="img"></div>
+            <div class="img1"></div>
+            <div class="img2"></div>
+        </section>
+        <div class="scroll" id="scroll"><b onclick="hola()">&#8811;</b></div>
+
+        <section class="sec" id="sec">
+            <div class="card">ADD.</div>
+            <div class="card">YOUR.</div>
+            <div class="card">DOCUMENT.</div>
+        </section>
+        <section class="contact" id="contact">
+            <h1>Contact</h1>
+            <form>
+                <input type="text" id="userName" name="userName" placeholder="Username">
+                <input type="email" id="email" name="email" placeholder="Email address" required>
+                <input type="text" id="textarea" name="message" placeholder="Type Message..." required>
+                <input type="submit" name="submit" value="Send">
+            </form>
+            <h3>Need a help? mail us: <a href="mailto:helpdocstack@gmail.com"> helpdocstack@gmail.com</a></h3>
+        </section>
+
+        <script>
+            function hola() {
+                var elmntToView = document.getElementById("sec");
+                elmntToView.scrollIntoView();
+            }
+        </script>
+    </body>
+
+    </html>
+    
+}
