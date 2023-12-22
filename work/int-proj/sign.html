@@ -1,0 +1,99 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up</title>
+  </head>
+  <body>
+    <form action="" id="form">
+      <input type="text"     id="name" placeholder="name" /> <br /><br />
+      <input type="email"    id="mail" placeholder="email" /> <br /><br />
+      <input type="password" id="pass" placeholder="password" /> <br /><br />
+      <input type="password" id="cpass" placeholder="recheck-password"/><br /><br />
+      <input type="checkbox" value="show-pass" onclick="show()"><b>show password</b> <br><br>
+      <input type="submit" value="submit" />
+    </form>
+    <script>
+        function show()
+        {
+          var x=document.getElementById('pass')
+          var y=document.getElementById('cpass')
+          if(x.type==="password" && y.type==="password")
+          {
+            x.type="text"
+            y.type="text"
+          }
+          else{
+            x.type="password"
+            y.type="password"
+          }
+        } 
+        
+    // form validiation
+    var forms=document.getElementById('form')
+    // giving one event
+    forms.addEventListener('submit',e=>{
+      e.preventDefault()
+      // reading values from user
+      var nm=document.getElementById("name").value
+      var ml=document.getElementById("mail" ).value
+      var ps=document.getElementById("pass" ).value
+      var cps=document.getElementById("cpass").value
+      // conditions
+      if(nm=='' && ml=='' && ps=='' && cps=='')
+      {
+        alert('fields can not be empty')
+      }
+      else if(nm=='' && ml!='' && ps!='' && cps!='')
+      {
+        alert('name can not be empty')
+      }
+      else if(nm!='' && ml=='' && ps!='' && cps!='')
+      {
+        alert('mail can not be empty')
+      }
+      else if(nm!='' && ml!='' && ps=='' && cps!='')
+      {
+        alert('password can not be empty')
+      }
+      else if(nm!='' && ml!='' && ps!='' && cps=='')
+      {
+        alert('confirm-password can not be empty')
+      }
+      else if(nm!='' && ml=='' && ps=='' && cps=='')
+      {
+        alert('only name field is filled please fill remaining fields')
+      }
+      else if(nm=='' && ml!='' && ps=='' && cps=='')
+      {
+        alert('only email field is filled please fill remaining fields')
+      }
+      else if(nm=='' && ml=='' && ps!='' && cps=='')
+      {
+        alert('only password field is filled please fill remaining fields')
+      }
+      else if(nm=='' && ml=='' && ps=='' && cps!='')
+      {
+        alert('only confirm-password is field filled please fill remaining fields')
+      }
+      
+      else{
+        if(ps!=cps)
+        {
+          alert('password and confirm-password is not matching')
+        }
+        else{
+          localStorage.setItem('mail',ml)
+          localStorage.setItem('password',ps)
+          // session storage
+          sessionStorage.setItem('mail',ml)
+          sessionStorage.setItem('password',ps)
+          confirm('registered successfuly')
+          open('./login.html')
+        }
+      }
+      
+    })
+    </script>
+  </body>
+</html>

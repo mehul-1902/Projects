@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <h1><a href="../index.html">DOCSTACK</a></h1>
+        <form name="form" id="form" action="/" method="GET">
+            <span class="error" id="emailError" style="color: rgb(255, 80, 80); text-align: center;"> &nbsp;</span>
+            <input type="email" id="email" name="email" placeholder="Email address" required>
+            <span class="error" id="passError" style="color: rgb(255, 80, 80); text-align: center;">&nbsp; </span>
+            <input type="password" id="pass" name="password" placeholder="Password" autocomplete="none" required>
+            <input type="submit" name="submit" value="Login">
+            <a href="./indexregister.html">Register Here</a>
+        </form>
+    </div>
+</body>
+
+
+
+</html>
+
+<?php
+   
+    $servername = "localhost"; 
+    $username = "root"; 
+    $password = "";
+   
+    $database = "docstack";
+   
+     // Create a connection 
+     $conn = mysqli_connect($localhost, 
+         $root, $, $docstack);
+   
+   
+    if($conn) {
+        echo "success"; 
+    } 
+    else {
+        die("Error". mysqli_connect_error()); 
+    } 
+?>
